@@ -65,22 +65,17 @@ const rootDiv = document.getElementById("root");
 `;
 
 class App extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      value: "as",
-    }
-
-    this.onChangeHandler = this.onChangeHandler.bind(this);
+  state = {
+    value: "as",
   }
 
-  onChangeHandler(e) {
+  onChangeHandler = (e) => {
     const { value } = e.target;
 
     this.setState({
       value
     });
+    console.log(this.state.value);
   }
 
   render() {
