@@ -75,12 +75,11 @@ class App extends React.Component {
     this.setState({
       value
     });
-    console.log(this.state.value);
   }
 
   render() {
     const { value } = this.state;
-
+    console.log(value);
     return (
       <form>
         <input type="text" value={value} onChange={this.onChangeHandler} />
