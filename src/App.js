@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import { Form } from "./components/Form";
+
 const rootDiv = document.getElementById("root");
 
 
@@ -74,17 +76,22 @@ class App extends React.Component {
 
     this.setState({
       value
+    }, () => {
+      console.log(this.state.value);
     });
   }
+
+  // Make a submit function handler
+  // Pass the handler to the Form, but define it here
+
+  // BONUS: after you submit the form make the input element to focus.
+  // HINT: use `ref`
 
   render() {
     const { value } = this.state;
     console.log(value);
     return (
-      <form>
-        <input type="text" value={value} onChange={this.onChangeHandler} />
-        <button type="submit">Save</button>
-      </form>
+      <Form value={value} onChangeHandler={this.onChangeHandler} />
     )
   }
 }
