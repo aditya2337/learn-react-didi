@@ -84,6 +84,9 @@ class App extends React.Component {
   // Make a submit function handler
   // Pass the handler to the Form, but define it here
 
+  // BONUS: after you submit the form make the input element to focus.
+  // HINT: use `ref`
+
   render() {
     const { value } = this.state;
 
