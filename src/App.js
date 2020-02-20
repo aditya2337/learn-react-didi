@@ -71,6 +71,8 @@ class App extends React.Component {
     value: "as",
   }
 
+  inputRef = React.createRef();
+
   onChangeHandler = (e) => {
     const { value } = e.target;
 
@@ -81,6 +83,15 @@ class App extends React.Component {
     });
   }
 
+  onClickHandler = (e) => {
+    e.preventDefault();
+    this.inputRef.current.focus();
+    this.setState({
+      value: '',
+    });
+    console.log('pooh');
+  }
+
   // Make a submit function handler
   // Pass the handler to the Form, but define it here
 
@@ -89,9 +100,9 @@ class App extends React.Component {
 
   render() {
     const { value } = this.state;
-    console.log(value);
+    console.log('rendered',value);
     return (
-      <Form value={value} onChangeHandler={this.onChangeHandler} />
+      <Form value={value} onChangeHandler={this.onChangeHandler} onClickHandler={this.onClickHandler} inputRef={this.inputRef} />
     )
   }
 }
